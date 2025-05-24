@@ -5,6 +5,7 @@ class HIVEApp {
         this.initTheme();
         this.initNavigation();
         this.initAnimations();
+        this.initMobileMenu();
     }
 
     // Theme Management
@@ -33,6 +34,37 @@ class HIVEApp {
         }
     }
 
+    // Mobile Menu Management
+    initMobileMenu() {
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', () => {
+                const isOpen = mobileMenu.classList.contains('active');
+                
+                if (isOpen) {
+                    mobileMenu.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                    document.body.style.overflow = '';
+                } else {
+                    mobileMenu.classList.add('active');
+                    menuToggle.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+                    mobileMenu.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+    }
+
     // Navigation
     initNavigation() {
         // Back button functionality
@@ -47,7 +79,7 @@ class HIVEApp {
     // Animations
     initAnimations() {
         // Add fade-in animation to cards when they come into view
-        const cards = document.querySelectorAll('.card, .result-card');
+        const cards = document.querySelectorAll('.feature-card, .mobile-card, .result-card');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -64,7 +96,7 @@ class HIVEApp {
     // Utility Methods
     static showMessage(message, type = 'success') {
         const messageEl = document.createElement('div');
-        messageEl.className = `message ${type}`;
+        messageEl.className = `mobile-message ${type}`;
         messageEl.textContent = message;
         
         const container = document.querySelector('.container');

@@ -8,50 +8,118 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="nav">
-                <h1 class="logo">🏠 HIVE</h1>
-                <button id="themeToggle" class="theme-toggle">🌙</button>
+    <nav class="mobile-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1 class="nav-logo">🏠 HIVE</h1>
+                <p class="nav-subtitle">Community Hub</p>
             </div>
-            <p class="subtitle">Your Community Hub for Everything</p>
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-toggle">🌙</button>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <main class="main">
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <a href="#" class="mobile-menu-item active">
+                <span class="menu-icon">🏠</span>
+                <span>Home</span>
+            </a>
+            <a href="roommate.html" class="mobile-menu-item">
+                <span class="menu-icon">👥</span>
+                <span>Roommates</span>
+            </a>
+            <a href="cart.html" class="mobile-menu-item">
+                <span class="menu-icon">🛒</span>
+                <span>Shopping</span>
+            </a>
+            <a href="rental.html" class="mobile-menu-item">
+                <span class="menu-icon">📦</span>
+                <span>Rentals</span>
+            </a>
+            <a href="auto-sharing.html" class="mobile-menu-item">
+                <span class="menu-icon">🚗</span>
+                <span>Rides</span>
+            </a>
+            <a href="game-partner.html" class="mobile-menu-item">
+                <span class="menu-icon">🎮</span>
+                <span>Gaming</span>
+            </a>
+        </div>
+    </div>
+
+    <main class="main-content">
         <div class="container">
-            <div class="dashboard">
-                <h2 class="dashboard-title">Choose Your Adventure</h2>
-                <div class="cards-grid">
-                    <div class="card" onclick="navigateTo('roommate.html')">
-                        <div class="card-icon">🏠</div>
+            <div class="welcome-section">
+                <h2 class="welcome-title">Welcome to HIVE</h2>
+                <p class="welcome-subtitle">Choose what you need help with</p>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-card" onclick="navigateTo('roommate.html')">
+                    <div class="feature-icon">🏠</div>
+                    <div class="feature-content">
                         <h3>Roommate Finder</h3>
                         <p>Find your perfect living companion</p>
                     </div>
-                    
-                    <div class="card" onclick="navigateTo('cart.html')">
-                        <div class="card-icon">🛒</div>
+                    <div class="feature-arrow">→</div>
+                </div>
+                
+                <div class="feature-card" onclick="navigateTo('cart.html')">
+                    <div class="feature-icon">🛒</div>
+                    <div class="feature-content">
                         <h3>Common Cart</h3>
                         <p>Shared shopping made easy</p>
                     </div>
-                    
-                    <div class="card" onclick="navigateTo('rental.html')">
-                        <div class="card-icon">📦</div>
+                    <div class="feature-arrow">→</div>
+                </div>
+                
+                <div class="feature-card" onclick="navigateTo('rental.html')">
+                    <div class="feature-icon">📦</div>
+                    <div class="feature-content">
                         <h3>Item Renting</h3>
                         <p>Borrow and lend within community</p>
                     </div>
-                    
-                    <div class="card" onclick="navigateTo('auto-sharing.html')">
-                        <div class="card-icon">🚗</div>
+                    <div class="feature-arrow">→</div>
+                </div>
+                
+                <div class="feature-card" onclick="navigateTo('auto-sharing.html')">
+                    <div class="feature-icon">🚗</div>
+                    <div class="feature-content">
                         <h3>Auto Sharing</h3>
                         <p>Coordinate rides and save money</p>
                     </div>
-                    
-                    <div class="card" onclick="navigateTo('game-partner.html')">
-                        <div class="card-icon">🎮</div>
+                    <div class="feature-arrow">→</div>
+                </div>
+                
+                <div class="feature-card" onclick="navigateTo('game-partner.html')">
+                    <div class="feature-icon">🎮</div>
+                    <div class="feature-content">
                         <h3>Game Partner</h3>
                         <p>Find your gaming squad</p>
                     </div>
+                    <div class="feature-arrow">→</div>
+                </div>
+            </div>
+
+            <div class="quick-stats">
+                <div class="stat-item">
+                    <span class="stat-number">127</span>
+                    <span class="stat-label">Active Users</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">89</span>
+                    <span class="stat-label">Items Shared</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">45</span>
+                    <span class="stat-label">Rides Today</span>
                 </div>
             </div>
         </div>

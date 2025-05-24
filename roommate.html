@@ -8,70 +8,78 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <nav class="page-nav">
-        <div class="container">
+    <nav class="mobile-nav">
+        <div class="nav-container">
             <button class="back-btn" onclick="window.location.href='index.html'">←</button>
-            <h1 class="page-title">🏠 Roommate Finder</h1>
+            <div class="nav-brand">
+                <h1 class="nav-title">🏠 Roommate Finder</h1>
+            </div>
             <button id="themeToggle" class="theme-toggle">🌙</button>
         </div>
     </nav>
 
-    <main class="main">
+    <main class="main-content">
         <div class="container">
-            <div class="form-container">
-                <h2>Find Your Perfect Roommate</h2>
-                <form id="roommateForm">
-                    <div class="form-group">
+            <div class="mobile-form-container">
+                <div class="form-header">
+                    <h2>Find Your Perfect Roommate</h2>
+                    <p>Tell us about yourself and your preferences</p>
+                </div>
+                
+                <form id="roommateForm" class="mobile-form">
+                    <div class="input-group">
                         <label for="name">Your Name</label>
                         <input type="text" id="name" required>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="age">Age</label>
-                        <input type="number" id="age" min="18" max="100" required>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="age">Age</label>
+                            <input type="number" id="age" min="18" max="100" required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="gender">Gender</label>
+                            <select id="gender" required>
+                                <option value="">Select</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="non-binary">Non-binary</option>
+                                <option value="prefer-not-to-say">Prefer not to say</option>
+                            </select>
+                        </div>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="gender">Gender</label>
-                        <select id="gender" required>
-                            <option value="">Select Gender</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="non-binary">Non-binary</option>
-                            <option value="prefer-not-to-say">Prefer not to say</option>
-                        </select>
+                    <div class="input-group">
+                        <label for="budget">Monthly Budget ($)</label>
+                        <input type="number" id="budget" placeholder="800" required>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="budget">Preferred Budget (Monthly)</label>
-                        <input type="number" id="budget" placeholder="e.g., 800" required>
-                    </div>
-                    
-                    <div class="form-group">
+                    <div class="input-group">
                         <label for="location">Preferred Location</label>
-                        <input type="text" id="location" placeholder="e.g., Downtown, Suburb" required>
+                        <input type="text" id="location" placeholder="Downtown, Suburb..." required>
                     </div>
                     
-                    <div class="form-group">
+                    <div class="input-group">
                         <label for="interests">Interests (comma-separated)</label>
-                        <input type="text" id="interests" placeholder="e.g., cooking, gaming, hiking" required>
+                        <input type="text" id="interests" placeholder="cooking, gaming, hiking..." required>
                     </div>
                     
-                    <button type="submit" class="btn">
+                    <button type="submit" class="mobile-btn primary">
                         <span id="searchText">Find Matches</span>
                         <span id="searchLoader" class="loading" style="display: none;"></span>
                     </button>
                 </form>
             </div>
 
-            <div id="aiSuggestions" class="form-container" style="display: none;">
+            <div id="aiSuggestions" class="mobile-card" style="display: none;">
                 <h3>🤖 AI Suggestions</h3>
                 <div id="aiContent"></div>
             </div>
 
             <div id="matchesContainer" style="display: none;">
                 <h2>Your Matches</h2>
-                <div id="matchesGrid" class="results-grid"></div>
+                <div id="matchesGrid" class="mobile-grid"></div>
             </div>
         </div>
     </main>
