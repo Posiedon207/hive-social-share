@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Sharing - HIVE</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <nav class="page-nav">
+        <div class="container">
+            <button class="back-btn" onclick="window.location.href='index.html'">←</button>
+            <h1 class="page-title">🚗 Auto Sharing</h1>
+            <button id="themeToggle" class="theme-toggle">🌙</button>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="container">
+            <div class="form-container">
+                <h2>Create a Ride</h2>
+                <form id="rideForm">
+                    <div class="form-group">
+                        <label for="startLocation">Starting Location</label>
+                        <input type="text" id="startLocation" placeholder="e.g., Downtown Mall" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="destination">Destination</label>
+                        <input type="text" id="destination" placeholder="e.g., Airport Terminal" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="datetime">Date & Time</label>
+                        <input type="datetime-local" id="datetime" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="vehicle">Vehicle Type</label>
+                        <select id="vehicle" required>
+                            <option value="">Select Vehicle</option>
+                            <option value="car">Car</option>
+                            <option value="motorcycle">Motorcycle</option>
+                            <option value="bicycle">Bicycle</option>
+                            <option value="scooter">Electric Scooter</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="seats">Available Seats</label>
+                        <input type="number" id="seats" min="1" max="8" value="1" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="costShare">Cost Share (per person)</label>
+                        <input type="number" id="costShare" step="0.50" min="0" placeholder="e.g., 5.00">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes">Additional Notes</label>
+                        <textarea id="notes" rows="3" placeholder="Meeting point, contact info, special instructions..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Create Ride</button>
+                </form>
+            </div>
+
+            <div id="aiSuggestions" class="form-container" style="display: none;">
+                <h3>🤖 Route Suggestions</h3>
+                <div id="aiContent"></div>
+            </div>
+
+            <div class="rides-controls">
+                <h2>Available Rides</h2>
+                
+                <div class="filters">
+                    <input type="text" id="filterLocation" placeholder="Search location...">
+                    
+                    <select id="filterVehicle">
+                        <option value="">All Vehicles</option>
+                        <option value="car">Car</option>
+                        <option value="motorcycle">Motorcycle</option>
+                        <option value="bicycle">Bicycle</option>
+                        <option value="scooter">Electric Scooter</option>
+                    </select>
+                    
+                    <select id="filterTime">
+                        <option value="">Any Time</option>
+                        <option value="today">Today</option>
+                        <option value="tomorrow">Tomorrow</option>
+                        <option value="week">This Week</option>
+                    </select>
+                    
+                    <select id="sortBy">
+                        <option value="time">Soonest First</option>
+                        <option value="cost-low">Cheapest First</option>
+                        <option value="seats">Most Seats</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="ridesGrid" class="results-grid"></div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/auto-sharing.js"></script>
+</body>
+</html>

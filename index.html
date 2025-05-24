@@ -1,26 +1,62 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>hive-social-share</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIVE - Community Hub</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="nav">
+                <h1 class="logo">🏠 HIVE</h1>
+                <button id="themeToggle" class="theme-toggle">🌙</button>
+            </div>
+            <p class="subtitle">Your Community Hub for Everything</p>
+        </div>
+    </header>
 
-    <meta property="og:title" content="hive-social-share" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <main class="main">
+        <div class="container">
+            <div class="dashboard">
+                <h2 class="dashboard-title">Choose Your Adventure</h2>
+                <div class="cards-grid">
+                    <div class="card" onclick="navigateTo('roommate.html')">
+                        <div class="card-icon">🏠</div>
+                        <h3>Roommate Finder</h3>
+                        <p>Find your perfect living companion</p>
+                    </div>
+                    
+                    <div class="card" onclick="navigateTo('cart.html')">
+                        <div class="card-icon">🛒</div>
+                        <h3>Common Cart</h3>
+                        <p>Shared shopping made easy</p>
+                    </div>
+                    
+                    <div class="card" onclick="navigateTo('rental.html')">
+                        <div class="card-icon">📦</div>
+                        <h3>Item Renting</h3>
+                        <p>Borrow and lend within community</p>
+                    </div>
+                    
+                    <div class="card" onclick="navigateTo('auto-sharing.html')">
+                        <div class="card-icon">🚗</div>
+                        <h3>Auto Sharing</h3>
+                        <p>Coordinate rides and save money</p>
+                    </div>
+                    
+                    <div class="card" onclick="navigateTo('game-partner.html')">
+                        <div class="card-icon">🎮</div>
+                        <h3>Game Partner</h3>
+                        <p>Find your gaming squad</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
-
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <script src="js/main.js"></script>
+</body>
 </html>

@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roommate Finder - HIVE</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <nav class="page-nav">
+        <div class="container">
+            <button class="back-btn" onclick="window.location.href='index.html'">←</button>
+            <h1 class="page-title">🏠 Roommate Finder</h1>
+            <button id="themeToggle" class="theme-toggle">🌙</button>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="container">
+            <div class="form-container">
+                <h2>Find Your Perfect Roommate</h2>
+                <form id="roommateForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" min="18" max="100" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="non-binary">Non-binary</option>
+                            <option value="prefer-not-to-say">Prefer not to say</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="budget">Preferred Budget (Monthly)</label>
+                        <input type="number" id="budget" placeholder="e.g., 800" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="location">Preferred Location</label>
+                        <input type="text" id="location" placeholder="e.g., Downtown, Suburb" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="interests">Interests (comma-separated)</label>
+                        <input type="text" id="interests" placeholder="e.g., cooking, gaming, hiking" required>
+                    </div>
+                    
+                    <button type="submit" class="btn">
+                        <span id="searchText">Find Matches</span>
+                        <span id="searchLoader" class="loading" style="display: none;"></span>
+                    </button>
+                </form>
+            </div>
+
+            <div id="aiSuggestions" class="form-container" style="display: none;">
+                <h3>🤖 AI Suggestions</h3>
+                <div id="aiContent"></div>
+            </div>
+
+            <div id="matchesContainer" style="display: none;">
+                <h2>Your Matches</h2>
+                <div id="matchesGrid" class="results-grid"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/roommate.js"></script>
+</body>
+</html>

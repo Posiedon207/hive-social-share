@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Partner Finder - HIVE</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <nav class="page-nav">
+        <div class="container">
+            <button class="back-btn" onclick="window.location.href='index.html'">←</button>
+            <h1 class="page-title">🎮 Game Partner Finder</h1>
+            <button id="themeToggle" class="theme-toggle">🌙</button>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="container">
+            <div class="form-container">
+                <h2>Find Your Gaming Squad</h2>
+                <form id="gameForm">
+                    <div class="form-group">
+                        <label for="gamerTag">Gamer Tag / Username</label>
+                        <input type="text" id="gamerTag" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="preferredGames">Preferred Games</label>
+                        <div id="gamesList" class="games-selection">
+                            <!-- Games will be populated by JavaScript -->
+                        </div>
+                        <input type="text" id="customGame" placeholder="Add custom game...">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="skillLevel">Overall Skill Level</label>
+                        <select id="skillLevel" required>
+                            <option value="">Select Skill Level</option>
+                            <option value="beginner">Beginner</option>
+                            <option value="casual">Casual</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                            <option value="expert">Expert/Pro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="platform">Primary Platform</label>
+                        <select id="platform" required>
+                            <option value="">Select Platform</option>
+                            <option value="pc">PC</option>
+                            <option value="playstation">PlayStation</option>
+                            <option value="xbox">Xbox</option>
+                            <option value="nintendo">Nintendo Switch</option>
+                            <option value="mobile">Mobile</option>
+                            <option value="multiple">Multiple Platforms</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="playTime">Preferred Play Time</label>
+                        <select id="playTime" required>
+                            <option value="">Select Time Preference</option>
+                            <option value="morning">Morning (6AM - 12PM)</option>
+                            <option value="afternoon">Afternoon (12PM - 6PM)</option>
+                            <option value="evening">Evening (6PM - 10PM)</option>
+                            <option value="late-night">Late Night (10PM - 2AM)</option>
+                            <option value="flexible">Flexible</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="gameMode">Preferred Game Mode</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" value="competitive"> Competitive</label>
+                            <label><input type="checkbox" value="casual"> Casual</label>
+                            <label><input type="checkbox" value="cooperative"> Co-op</label>
+                            <label><input type="checkbox" value="solo"> Solo Queue</label>
+                            <label><input type="checkbox" value="team"> Team Play</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="communication">Communication Preference</label>
+                        <select id="communication">
+                            <option value="voice">Voice Chat</option>
+                            <option value="text">Text Only</option>
+                            <option value="both">Both Voice & Text</option>
+                            <option value="none">No Communication</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn">Find Gaming Partners</button>
+                </form>
+            </div>
+
+            <div id="aiSuggestions" class="form-container" style="display: none;">
+                <h3>🤖 Gaming Insights</h3>
+                <div id="aiContent"></div>
+            </div>
+
+            <div class="partners-controls" style="display: none;">
+                <h2>Gaming Partners</h2>
+                
+                <div class="filters">
+                    <select id="filterGame">
+                        <option value="">All Games</option>
+                    </select>
+                    
+                    <select id="filterSkill">
+                        <option value="">All Skill Levels</option>
+                        <option value="beginner">Beginner</option>
+                        <option value="casual">Casual</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                        <option value="expert">Expert/Pro</option>
+                    </select>
+                    
+                    <select id="filterPlatform">
+                        <option value="">All Platforms</option>
+                        <option value="pc">PC</option>
+                        <option value="playstation">PlayStation</option>
+                        <option value="xbox">Xbox</option>
+                        <option value="nintendo">Nintendo Switch</option>
+                        <option value="mobile">Mobile</option>
+                        <option value="multiple">Multiple Platforms</option>
+                    </select>
+                    
+                    <select id="filterOnline">
+                        <option value="">All Players</option>
+                        <option value="online">Online Now</option>
+                        <option value="recent">Recently Active</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="partnersGrid" class="results-grid"></div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/game-partner.js"></script>
+</body>
+</html>
